@@ -1,11 +1,44 @@
-import './homepage.style.css'
-import Menu from '../../Menu.component'
+import './homepage.style.scss'
+
 
 const HomePage = () => {
     return (
         <>
-             <Menu />
-             <h1>Home Page</h1>
+            <div className='homepage'>
+            <h1>Welcome to my HomePage</h1>
+                <div className='directory-menu'>
+                    <div className='menu-item'>
+                        <div className='content'>
+                            <div className='title'>HATS</div>
+                            <div className='subtitle'>SHOP NOW</div>
+                        </div>
+                    </div>
+                    <div className='menu-item'>
+                        <div className='content'>
+                            <div className='title'>JACKETS</div>
+                            <div className='subtitle'>SHOP NOW</div>
+                        </div>
+                    </div>
+                    <div className='menu-item'>
+                        <div className='content'>
+                            <div className='title'>SNEAKERS</div>
+                            <div className='subtitle'>SHOP NOW</div>
+                        </div>
+                    </div>
+                    <div className='menu-item'>
+                        <div className='content'>
+                            <div className='title'>WOMENS</div>
+                            <div className='subtitle'>SHOP NOW</div>
+                        </div>
+                    </div>
+                    <div className='menu-item'>
+                        <div className='content'>
+                            <div className='title'>MENS</div>
+                            <div className='subtitle'>SHOP NOW</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
