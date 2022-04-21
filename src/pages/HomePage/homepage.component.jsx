@@ -1,46 +1,53 @@
+import React from 'react'
+import Directory from '../../components/directory/directory.component'
 import './homepage.style.scss'
 
 
-const HomePage = () => {
-    return (
-        <>
-            <div className='homepage'>
-            <h1>Welcome to my HomePage</h1>
-                <div className='directory-menu'>
-                    <div className='menu-item'>
-                        <div className='content'>
-                            <div className='title'>HATS</div>
-                            <div className='subtitle'>SHOP NOW</div>
-                        </div>
-                    </div>
-                    <div className='menu-item'>
-                        <div className='content'>
-                            <div className='title'>JACKETS</div>
-                            <div className='subtitle'>SHOP NOW</div>
-                        </div>
-                    </div>
-                    <div className='menu-item'>
-                        <div className='content'>
-                            <div className='title'>SNEAKERS</div>
-                            <div className='subtitle'>SHOP NOW</div>
-                        </div>
-                    </div>
-                    <div className='menu-item'>
-                        <div className='content'>
-                            <div className='title'>WOMENS</div>
-                            <div className='subtitle'>SHOP NOW</div>
-                        </div>
-                    </div>
-                    <div className='menu-item'>
-                        <div className='content'>
-                            <div className='title'>MENS</div>
-                            <div className='subtitle'>SHOP NOW</div>
-                        </div>
-                    </div>
+class HomePage extends React.Component {
+    constructor(){
+        super()
+        this.state = {
+            sections: [
+                        {
+                        title: 'hats',
+                        imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+                        id: 1
+                        },
+                        {
+                        title: 'jackets',
+                        imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+                        id: 2
+                        },
+                        {
+                        title: 'sneakers',
+                        imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+                        id: 3
+                        },
+                        {
+                        title: 'womens',
+                        imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                        size: 'large',
+                        id: 4
+                        },
+                        {
+                        title: 'mens',
+                        imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+                        size: 'large',
+                        id: 5
+                        }
+                    ]
+        }
+    }
+    render(){
+        return (
+            <>
+                <div className='homepage'>
+                <h1>Welcome to my HomePage</h1>
+                   <Directory />
                 </div>
-            </div>
-        </>
-    )
+            </>
+        )
+    }
 }
 
 
