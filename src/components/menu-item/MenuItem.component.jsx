@@ -1,5 +1,5 @@
 import './MenuItem.style.scss'
-
+// Menu with title, image URL is being carried
 const MenuItem = ({menu}) => {
     return (
         <>

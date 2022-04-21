@@ -2,7 +2,9 @@ import React from 'react'
 import Directory from '../../components/directory/directory.component'
 import './homepage.style.scss'
 
-
+// Maintaining the entire state for the home page with the
+// sections array that contributes to give the categories 
+// of products
 class HomePage extends React.Component {
     constructor(){
         super()
@@ -39,11 +41,13 @@ class HomePage extends React.Component {
         }
     }
     render(){
+        // From the this.state object destructuring sections
         const {sections} = this.state
         return (
             <>
                 <div className='homepage'>
                 <h1>Welcome to my HomePage</h1>
+                {/**sending sections array as a prop */}
                    <Directory sections = {sections}/>
                 </div>
             </>
