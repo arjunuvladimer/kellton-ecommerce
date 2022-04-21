@@ -39,11 +39,12 @@ class HomePage extends React.Component {
         }
     }
     render(){
+        const {sections} = this.state
         return (
             <>
                 <div className='homepage'>
                 <h1>Welcome to my HomePage</h1>
-                   <Directory />
+                   <Directory sections = {sections}/>
                 </div>
             </>
         )
