@@ -9,7 +9,7 @@ function App() {
       <Routes>
       {/** path represents the navigation path where it should
         redirect to which component using element */}
-        <Route path='/' element={<HomePage />} />
+        <Route path='/home' element={<HomePage />} />
       </Routes>
     </>
   );
