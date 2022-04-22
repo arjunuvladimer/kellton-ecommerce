@@ -1,6 +1,7 @@
 import HomePage from "./pages/HomePage/homepage.component";
 
 import {Routes,Route} from 'react-router-dom'
+import ShopPage from "./pages/ShopPage/shoppage.component";
 
 // ROUTE EXAMPLE IMPORTS
 // import {Link,useNavigate,useParams} from 'react-router-dom'
@@ -14,6 +15,7 @@ function App() {
       {/** path represents the navigation path where it should
         redirect to */}
         <Route path='/' element={<HomePage />} />
+        <Route path='/shop' element={<ShopPage />} />
 
         {/** ROUTE EXAMPLES
         <Route path='/topiclist' element={<TopicList />} />
