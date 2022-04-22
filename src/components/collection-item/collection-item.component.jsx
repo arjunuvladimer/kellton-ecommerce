@@ -1,12 +1,18 @@
 import './collection-item.styles.scss'
 
-const CollectionItem = () => {
+const CollectionItem = ({item}) => {
+    const {name,imageUrl,price} = item
     return (
         <>
             <div className='collection-item'>
-                <div className='image' />
-                <span className='name'>Brown Brim</span>
-                <span className='price'>$25</span>
+                <div 
+                    className='image'
+                    style={{backgroundImage: `url(${imageUrl})`}}
+                />
+               <div className='collection-footer'>
+                    <span className='name'>{name}</span>
+                    <span className='price'>${price}</span>
+               </div>
             </div>
         </>
     )
