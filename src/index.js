@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './index.scss'
 
 // Used for routing or navigating in the app
 import {BrowserRouter} from 'react-router-dom'
