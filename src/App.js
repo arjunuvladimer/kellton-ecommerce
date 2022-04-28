@@ -4,6 +4,7 @@ import {Routes,Route} from 'react-router-dom'
 import ShopPage from "./pages/ShopPage/shoppage.component";
 import SignInSignUp from "./pages/Sign-in-and-Sign-up/Sign-in-and-Sign-up.component";
 import Header from "./components/header/header.component";
+import Category from "./pages/Category/Category.component";
 
 // ROUTE EXAMPLE IMPORTS
 // import {Link,useNavigate,useParams} from 'react-router-dom'
@@ -17,13 +18,14 @@ function App() {
       <Routes>
       {/** path represents the navigation path where it should
         redirect to */}
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<HomePage  />} />
         <Route path='/shop' element={<ShopPage />} />
         <Route path='/signin' element={<SignInSignUp />} />
-        {/** ROUTE EXAMPLES
+        <Route path='/category/:categoryId' element={ <Category />} />
+         {/**  ROUTE EXAMPLES
         <Route path='/topiclist' element={<TopicList />} />
-        // <Route path='/topiclist/:topicId' element={<TopicDetail />} />
-        */}
+        <Route path='/topiclist/:topicId' element={<TopicDetail />} /> */}
+      
       </Routes>
     </>
   );
