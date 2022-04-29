@@ -3,9 +3,10 @@ import CartDropDown from '../cart-dropdown/cart-dropdown.component'
 import './cart-icon.styles.scss'
 
 import {useState} from 'react'
+import {connect} from 'react-redux'
 
 
-const CartIcon = () =>{
+const CartIcon = ({itemCount}) =>{
     const [hidden,setHidden] = useState(true)
     const handleDropDown = () => {
         setHidden(!hidden)
@@ -17,10 +18,13 @@ const CartIcon = () =>{
                 {
                     hidden?<CartDropDown />:''  
                 }
-                
+                <span className='item-count'>{itemCount}</span>
             </div>
         </>
     )
 }
 
-export default CartIcon
+const mapStateToProps = (state) => ({
+    itemCount: state.cart.cartItems.length
+})
+export default connect(mapStateToProps,null)(CartIcon)

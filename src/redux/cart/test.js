@@ -1,3 +1,3 @@
-const arrray1 = [1,2,3,4]
+let obj = {fname:"arjun",id:1235}
 
-console.log(...arrray1)
+console.log({...obj})
