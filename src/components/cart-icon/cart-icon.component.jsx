@@ -1,15 +1,18 @@
 import {ReactComponent as ShoppingIcon} from '../../assets/shopping-bag.svg'
 import CartDropDown from '../cart-dropdown/cart-dropdown.component'
 import './cart-icon.styles.scss'
-import toggleCartHidden from '../../redux/cart/cart.action'
 
-import {connect} from 'react-redux'
+import {useState} from 'react'
 
-const CartIcon = ({toggleCartHidden,hidden}) =>{
 
+const CartIcon = () =>{
+    const [hidden,setHidden] = useState(true)
+    const handleDropDown = () => {
+        setHidden(!hidden)
+    }
     return(
         <>
-            <div className='cart-icon' onClick={toggleCartHidden}>
+            <div className='cart-icon' onClick={handleDropDown}>
                 <ShoppingIcon className='shopping-icon' />
                 {
                     hidden?<CartDropDown />:''  
@@ -20,13 +23,4 @@ const CartIcon = ({toggleCartHidden,hidden}) =>{
     )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    toggleCartHidden: () => dispatch(toggleCartHidden())
-})
-
-const mapStateToProps = (state) => ({
-    hidden: state.cart.hidden
-})
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(CartIcon)
+export default CartIcon
