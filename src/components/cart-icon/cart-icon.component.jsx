@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 
 
 const CartIcon = ({itemCount}) =>{
-    const [hidden,setHidden] = useState(true)
+    const [hidden,setHidden] = useState(false)
     const handleDropDown = () => {
         setHidden(!hidden)
     }

@@ -1,6 +1,4 @@
 // Utility Functions which allows to keep files clean
-
-
 export const addItemToCart = (cartItems, cartItemToAdd) => {
     const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToAdd.id)
 
@@ -20,3 +18,20 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
     // if there is a new item i am intializing quantity: to be 1
     return [...cartItems,{...cartItemToAdd, quantity:1}]
 } 
+
+
+export const clearItem = (cartItems,cartItemtoClear) => {
+    const existingCartItem = cartItems.find(
+                            cartItem => cartItem.id === cartItemtoClear.id )
+
+    if(existingCartItem.quantity === 1){
+        return cartItems.filter(cartItem => cartItem.id !== cartItemtoClear.id )
+    }   
+    return cartItems.map(cartItem => cartItem.id === cartItemtoClear.id   ? 
+        {...cartItem, quantity: cartItem.quantity - 1} : cartItem )
+}
+
+
+export const removeItem = (cartItems,cartItemToRemove) => {
+    return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
+}
